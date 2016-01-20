@@ -16,6 +16,6 @@
 	"require": 
 	{
 		"fluidphp/fluidphp": "*" ,
-		"fluidphp/translator-helper: "~1.0"
+		"fluidphp/translator-helper": "~1.0"
 	}
 }
