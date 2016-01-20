@@ -1,6 +1,6 @@
  ##########################################################
 
-FluidPhp 1 open source project email managerl helper
+FluidPhp 1 open source project email manager helper
 
 A powerfull framework based on the phptoolcase library.
 
