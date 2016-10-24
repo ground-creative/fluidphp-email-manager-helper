@@ -59,7 +59,6 @@
 			$this->_compileSubject( );
 			$headers = array( );
 			$headers .= 'MIME-Version: 1.0' . "\r\n";
-			
 			if ( 'html' === $type ){ $headers .= "Content-type: text/html\r\n"; }
 			if ( $this->_from )
 			{
@@ -103,7 +102,7 @@
 			{
 				foreach ( $this->_data as $key => $val )
 				{
-					if ( '_lang' === $key ){ continue; }
+					if ( '_lang' === $key || !is_string( $val ) ){ continue; }
 					$this->_subject = str_replace( '{' . $key . '}' , $val , $this->_subject );
 				}
 			}
