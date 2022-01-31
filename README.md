@@ -24,7 +24,8 @@ Visit phptoolcase.com for complete guides and examples.
 
 		"require": 
 		{
-			"fluidphp/emailmanager-helper": "~1.0"
+			"fluidphp/emailmanager-helper": ">=1.0" ,
+			"fluidphp/translator-helper": ">=1.0"
 		} ,
 		"extra": 
 		{
@@ -33,4 +34,12 @@ Visit phptoolcase.com for complete guides and examples.
 				"./vendor/fluidphp/helpers/EmailManager": ["fluidphp/emailmanager-helper"] ,
 				"./vendor/fluidphp/helpers/Translator": ["fluidphp/translator-helper"]
 			}
+		}
+		
+	- STAND-ALONE:
+	
+		"require": 
+		{
+			"fluidphp/emailmanager-helper": ">=1.0" ,
+			"fluidphp/translator-helper": ">=1.0"
 		}
