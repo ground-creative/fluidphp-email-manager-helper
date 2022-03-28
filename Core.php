@@ -2,18 +2,22 @@
 	
 	namespace helpers\EmailManager;
 	
+	use phptoolcase\HandyMan as HandyMan;
+	use phptoolcase\View as View;
+	use helpers\Translator\Core as Translator;
+	
 	class Core
 	{
 		const BASE_PATH =  '/views/email-templates';
 	
 		public function __construct( $folder , $translator = null )
 		{
-			$this->_basePath = realpath( ptc_path( 'app' ) . static::BASE_PATH . $folder );
+			$path = HandyMan::getAppPaths( 'app' ) . static::BASE_PATH . $folder;
+			$this->_basePath = realpath( $path );
 			if ( !$this->_basePath )
 			{
-				trigger_error( 'EmailManager helper could not find folder ' . 
-					ptc_path( 'app' ) . static::BASE_PATH . $folder . 
-							' for email templates!' , E_USER_ERROR );
+				trigger_error( 'EmailManager helper could not find folder ' . $path . 
+										' for email templates!' , E_USER_ERROR );
 			}
 			if ( $translator && !$this->_xml( $translator ) ){ return false; }
 		}
@@ -28,7 +32,7 @@
 		{
 			if ( $this->_translator ){ $this->_data[ '_lang' ] = $this->_translator; }
 			$tpl = $this->_basePath . '/views/' . $template;
-			$this->_template = \PtcView::make( $tpl , $this->_data )->compile( );
+			$this->_template = View::make( $tpl , $this->_data )->compile( );
 			return $this;
 		}
 		
@@ -90,9 +94,9 @@
 			$path = $this->_basePath . '/languages/';
 			if ( is_array( $file ) )
 			{
-				$this->_translator = new \helpers\Translator\Core( $path . $file[ 0 ] , $path . $file[ 1 ] );
+				$this->_translator = new Translator( $path . $file[ 0 ] , $path . $file[ 1 ] );
 			}
-			else{ $this->_translator = new \helpers\Translator\Core( $path . $file ); }
+			else{ $this->_translator = new Translator( $path . $file ); }
 			if ( !$this->_translator ){ return false; }
 		}
 		

@@ -16,7 +16,8 @@
 	] ,
 	"require": 
 	{
-		"fluidphp/translator-helper": "*"
+		"fluidphp/translator-helper": "*" ,
+		"phptoolcase/phptoolcase": "*"
 	} ,
 	"autoload": 
 	{
