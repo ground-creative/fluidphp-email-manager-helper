@@ -1,45 +1,46 @@
- ##########################################################
+ # FluidPhp Email Manager Helper
 
-FluidPhp 1 open source project email manager helper
+FluidPhp is a framework based on the PhpToolCase library, visit [phptoolcase.com](http://phptoolcase.com) for complete guides and examples.
 
-A powerfull framework based on the phptoolcase library.
+This helper to can ease the process of sending emails.
 
-##########################################################
+## Installation
 
-FluidPhp is a framework based on the PhpToolCase library.
+Add the package to your composer.json file, to install the helper.
 
-Visit phptoolcase.com for complete guides and examples.
+With fluidphp framework:
+```
+"require": 
+{
+	"mnsami/composer-custom-directory-installer": "2.0.*" ,
+	"fluidphp/emailmanager-helper": "*" ,
+	"fluidphp/translator-helper": "*"
+} ,
+"extra": 
+{
+	"installer-paths": 
+	{
+		"./vendor/fluidphp/helpers/EmailManager": ["fluidphp/emailmanager-helper"] ,
+		"./vendor/fluidphp/helpers/Translator": ["fluidphp/translator-helper"]
+	}
+}
+```	
+Stand-alone:
+```		
+"require": 
+{
+	"fluidphp/emailmanager-helper": "*" ,
+	"fluidphp/translator-helper": "*"
+}
+```
 
-== PROJECT INFO ===================================
+## Project Info
 
-== Project Home: http://phptoolcase.com
+### Project Home
 
-== Requirements: php version 5.3+
+http://phptoolcase.com
 
-== INSTALLATION WITH COMPOSER ========================
-	
-	Add the following to your composer.json file:
-	
-	- WITH FLUIDPHP FRAMEWORK:
+### Requirements
 
-		"require": 
-		{
-			"fluidphp/emailmanager-helper": ">=1.0" ,
-			"fluidphp/translator-helper": ">=1.0"
-		} ,
-		"extra": 
-		{
-			"installer-paths": 
-			{
-				"./vendor/fluidphp/helpers/EmailManager": ["fluidphp/emailmanager-helper"] ,
-				"./vendor/fluidphp/helpers/Translator": ["fluidphp/translator-helper"]
-			}
-		}
-		
-	- STAND-ALONE:
-	
-		"require": 
-		{
-			"fluidphp/emailmanager-helper": ">=1.0" ,
-			"fluidphp/translator-helper": ">=1.0"
-		}
+php version 5.4+<br>
+php mail( ) function (to send emails)
