@@ -29,8 +29,7 @@ Stand-alone:
 ```		
 "require": 
 {
-	"fluidphp/emailmanager-helper": "*" ,
-	"fluidphp/translator-helper": "*"
+	"fluidphp/emailmanager-helper": "*"
 }
 ```
 
